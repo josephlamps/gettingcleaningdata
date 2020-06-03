@@ -1,0 +1,50 @@
+# Run_Analysis executes the following steps.
+
+# first, it runs dplyr and sets the working directory to "UCI HAR Dataset".
+
+# read data
+
+Then, it reads the data and makes the following variables: 
+
+features  from features.txt
+activities from activity_labels.txt
+subjecttest from test/subject_test.txt
+xtest from test/X_test.txt
+ytest from test/y_test.txt
+subjecttrain from read.table
+xtrain from train/X_train.txt
+ytrain from train/y_train.txt
+
+# Then, tables are bound together.
+
+the rows of xtrain and xtest are bound.
+The rows of ytrain and ytest are bound
+The rows of subjecttrain and subjecttest are bound
+The columns of the above 3 are bound.
+
+# select necessary columns
+
+THe subject and code columns, as well as those containing "mean" and "std", are selected and put into a new tidy matrix.
+
+# add activity names
+
+The code column is replaced with the names that the codes refer to.
+
+# Column names are fixed to be clearer
+
+tBody is replaced with TimeBody
+Acc is replaced with Accelerometer
+Gyro is replaced with Gyroscope
+Mag is replaced with magnitude
+BodyBody is replaced with Body
+mean is replaced with Mean
+angle is replaced with Angle
+gravity is replaced with Gravity
+t is replaced with Time
+f is replaced with Frequency
+
+# Summarize by subject and activity
+
+The above table is summarized by subject and activity, and the means for each category are given.
+
+# The table is then written as final.txt
